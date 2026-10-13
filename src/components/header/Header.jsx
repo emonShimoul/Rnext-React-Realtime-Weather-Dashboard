@@ -5,7 +5,7 @@ import Search from "./Search";
 
 const Header = () => {
   return (
-    <header className="fixed w-full top-0 z-50 bg-linear-to-b from-black/60 to-black/0 pb-10">
+    <header className="fixed w-full top-0 z-50 bg-linear-to-b from-black/60 to-black/0 pb-4">
       <nav className="container flex items-center justify-between py-6">
         <Logo />
 
