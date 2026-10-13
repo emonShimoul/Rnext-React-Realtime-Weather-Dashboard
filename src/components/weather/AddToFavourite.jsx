@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import RedHeartIcon from "../../assets/heart-red.svg";
 import HeartIcon from "../../assets/heart.svg";
 import { FavouriteContext, WeatherContext } from "../../context";
@@ -12,6 +12,12 @@ const AddToFavourite = () => {
   const [isFavourite, toggleFavourite] = useState(false);
 
   const { latitude, longitude, location } = weatherData;
+
+  useEffect(()=>{
+    const found = favourites.find((fav) => fav.location === location);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    toggleFavourite(found);
+  }, [])
 
   const handleFavourites = () => {
     const found = favourites.find((fav) => fav.location === location);
