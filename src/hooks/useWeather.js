@@ -70,7 +70,8 @@ const useWeather = () => {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading({
-      loading: true,
+      ...loading,
+      state: true,
       message: "Finding location...",
     });
 
